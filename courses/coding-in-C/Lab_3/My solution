@@ -88,6 +88,10 @@ int main() {
         if (num2 == 0) {
             // Print an error message if division by zero is attempted
             printf("Error: Division by zero is not allowed.\n");
+            printf("Reenter the second number: ");
+            scanf("%f", &num2);
+            result = num1 / num2;
+            printf("The result of %.2f / %.2f = %.2f\n", num1, num2, result);
         } else {
             // Perform the division
             result = num1 / num2;
