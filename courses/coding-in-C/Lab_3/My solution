@@ -1,0 +1,116 @@
+#include <stdio.h>
+/*
+    The line above tells the compiler to include the Standard Input/Output library.
+    This library is needed so we can use printf() to display text
+    and scanf() to read input from the keyboard.
+*/
+
+int main() {
+    /*
+        main() is the starting point of every C program.
+        When the program runs, execution begins here.
+    */
+
+    // Declare a variable to store the first number entered by the user
+    float num1;
+
+    // Declare a variable to store the second number entered by the user
+    float num2;
+
+    /*
+        Declare a variable to store the arithmetic operation.
+        This will hold one character: +, -, *, or /
+    */
+    char operation;
+
+    // Declare a variable to store the result of the calculation
+    float result;
+
+    // Ask the user to enter the first floating-point number
+    printf("Enter the first number: ");
+
+    /*
+        scanf() reads input from the keyboard.
+        %f means we are expecting a floating-point number.
+        &num1 gives scanf the memory address where the value should be stored.
+    */
+    scanf("%f", &num1);
+
+    // Ask the user to enter the second floating-point number
+    printf("Enter the second number: ");
+
+    // Read and store the second number entered by the user
+    scanf("%f", &num2);
+
+    // Ask the user to choose an arithmetic operation
+    printf("Choose an operation (+, -, *, /): ");
+
+    /*
+        %c tells scanf to read a single character.
+        The space before %c is important:
+        it clears any leftover whitespace (like pressing Enter).
+    */
+    scanf(" %c", &operation);
+
+    /*
+        Use if-statements to check which operation the user selected.
+        Each condition checks the value of 'operation'.
+    */
+
+    if (operation == '+') {
+        // If the operation is addition, add the two numbers
+        result = num1 + num2;
+
+        // Display the result with two decimal places
+        printf("The result of %.2f + %.2f = %.2f\n", num1, num2, result);
+    }
+    else if (operation == '-') {
+        // If the operation is subtraction, subtract the second number from the first
+        result = num1 - num2;
+
+        // Display the result
+        printf("The result of %.2f - %.2f = %.2f\n", num1, num2, result);
+    }
+    else if (operation == '*') {
+        // If the operation is multiplication, multiply the two numbers
+        result = num1 * num2;
+
+        // Display the result
+        printf("The result of %.2f * %.2f = %.2f\n", num1, num2, result);
+    }
+    else if (operation == '/') {
+        /*
+            If the operation is division, we must first check
+            that the second number is NOT zero.
+            Division by zero is not allowed.
+        */
+
+        if (num2 == 0) {
+            // Print an error message if division by zero is attempted
+            printf("Error: Division by zero is not allowed.\n");
+            printf("Reenter the second number: ");
+            scanf("%f", &num2);
+            result = num1 / num2;
+            printf("The result of %.2f / %.2f = %.2f\n", num1, num2, result);
+        } else {
+            // Perform the division
+            result = num1 / num2;
+
+            // Display the result
+            printf("The result of %.2f / %.2f = %.2f\n", num1, num2, result);
+        }
+    }
+    else {
+        /*
+            If the user entered something other than +, -, *, or /,
+            this block will run.
+        */
+        printf("Error: Invalid operation selected.\n");
+    }
+
+    /*
+        return 0 ends the program.
+        It tells the operating system that the program ran successfully.
+    */
+    return 0;
+}
