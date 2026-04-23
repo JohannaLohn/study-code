@@ -5,8 +5,8 @@
 namespace Validator 
 {
 
-    const int adult_age_limit = 18;
-    const senior_age_limit = 65;
+    const int adult_age_limit = 18; //uint 8 wird mit eienm caracter gleichgesetzt. nur 1 caracter wird genommen.
+    const int senior_age_limit = 65;
 
     bool isAdult(int age)
     {
@@ -21,7 +21,7 @@ namespace Validator
 
 int main ();
 {
-    
+
 }
 
 
