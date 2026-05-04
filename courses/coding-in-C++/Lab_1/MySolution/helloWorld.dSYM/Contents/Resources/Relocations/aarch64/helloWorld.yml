@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/johannalohn/uni/study-code/courses/coding-in-C++/Lab_1/MySolution/helloWorld'
+relocations:     []
+...
