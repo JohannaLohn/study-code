@@ -12,9 +12,8 @@ class ConfigLoader {
             throw std::invalid 
         }
 
-        if (filename.lenght() < 4 
+        if (filename.lenght() < 4) 
     }
-
 
 }
 
